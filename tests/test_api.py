@@ -14,3 +14,9 @@ def test_add_endpoint():
     response = client.get("/api/add?a=2&b=3")
     assert response.status_code == 200
     assert response.json()["result"] == 5
+
+
+def test_version_endpoint():
+    response = client.get("/version")
+    assert response.status_code == 200
+    assert response.json() == {"version": "1.0.0"}
