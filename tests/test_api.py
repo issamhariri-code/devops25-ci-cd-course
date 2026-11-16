@@ -19,4 +19,10 @@ def test_add_endpoint():
 def test_version_endpoint():
     response = client.get("/version")
     assert response.status_code == 200
-    assert response.json() == {"version": "1.0.0"}
+    assert response.json() == {"version": "1.0.1"}
+
+
+def test_divide_by_zero_endpoint():
+    response = client.get("/api/divide?a=10&b=0")
+    assert response.status_code == 400
+    assert response.json() == {"detail": "Cannot divide by zero"}
