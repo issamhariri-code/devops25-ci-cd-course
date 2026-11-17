@@ -60,7 +60,7 @@ jobs:
             | python3 -c 'import json, sys; data = json.load(sys.stdin); assert data == {"result": 105}, data; print("Addition OK")'
 
           curl -fsS --max-time 5 "http://127.0.0.1:8000/version" \
-            | python3 -c 'import json, sys; data = json.load(sys.stdin); assert data == {"version": "1.0.1"}, data; print("Version OK")'
+            | python3 -c 'import json, sys; data = json.load(sys.stdin); assert data == {"version": "9.9.9"}, data; print("Version OK")'
 
       - name: Cleanup
         if: always()
